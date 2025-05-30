@@ -20,3 +20,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x' # Ensure .NET 8 is installed
+
+      # Step 3: Install MAUI workload
+      - name: Install .NET MAUI workload
+        run: dotnet workload install maui
