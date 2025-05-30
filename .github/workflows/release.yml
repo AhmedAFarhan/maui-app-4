@@ -28,7 +28,7 @@ jobs:
 
       # Step 5: Build the app
       - name: Build the app
-        run: dotnet build MauiApp1/MauiApp1.sln -f net8.0-windows -c Release
+        run: dotnet build MauiApp1/MauiApp1.sln -f net8.0-windows10.0.19041.0 -c Release
         
       # Step 7: Install Squirrel globally
       - name: Install Squirrel
