@@ -1,9 +1,6 @@
 name: Release MAUI Windows App
 
 on:
-  push:
-    branches:
-      - main  # Adjust to your release branch
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
@@ -24,3 +21,7 @@ jobs:
       # Step 3: Install MAUI workload
       - name: Install .NET MAUI workload
         run: dotnet workload install maui
+
+            # Step 7: Install Squirrel globally
+      - name: Install Squirrel
+        run: npm install -g squirrel
