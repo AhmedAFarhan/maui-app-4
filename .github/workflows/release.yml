@@ -39,8 +39,8 @@ jobs:
         run: npm install -g squirrel
 
       # Step 7.1: Add NPM Global to PATH
-      - name: Add NPM Global to PATH
-        run: echo "::add-path::$(npm config get prefix)\node_modules\.bin"
+      - name: Add NPM Global Binaries to PATH
+        run: echo "$(npm config get prefix)/node_modules/.bin" >> $GITHUB_PATH
 
       # Step 8: Package with Squirrel
       - name: Package with Squirrel
