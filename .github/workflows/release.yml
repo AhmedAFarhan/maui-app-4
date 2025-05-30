@@ -1,0 +1,22 @@
+name: Release MAUI Windows App
+
+on:
+  push:
+    branches:
+      - main  # Adjust to your release branch
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      #- name: Checkout code
+        #uses: actions/checkout@v3
+
+      # Step 2: Setup .NET SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x' # Ensure .NET 8 is installed
