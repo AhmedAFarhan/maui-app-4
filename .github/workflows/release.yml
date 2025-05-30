@@ -24,7 +24,7 @@ jobs:
 
       # Step 4: Restore dependencies
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore MauiApp1/MauiApp1.sln
 
       # Step 5: Build the app
       - name: Build the app
