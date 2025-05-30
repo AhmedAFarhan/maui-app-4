@@ -29,7 +29,18 @@ jobs:
       # Step 5: Build the app
       - name: Build the app
         run: dotnet build MauiApp1/MauiApp1.sln -f net8.0-windows10.0.19041.0 -c Release
+
+      # Step 6: Publish the app
+      - name: Publish the app
+        run: dotnet publish -f net8.0-windows10.0.19041.0 -c Release -o MauiApp1/output MauiApp1/MauiApp1.sln
         
       # Step 7: Install Squirrel globally
       - name: Install Squirrel
         run: npm install -g squirrel
+
+      # Step 8: Package with Squirrel
+      - name: Package with Squirrel
+        run: |
+          cd MauiApp1/output
+          squirrel --releasify MyApp.exe --output-dir="../../squirrel-releases"
+          
