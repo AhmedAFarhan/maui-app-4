@@ -9,8 +9,8 @@ jobs:
 
     steps:
       # Step 1: Checkout the repository
-      #- name: Checkout code
-        #uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       # Step 2: Setup .NET SDK
       - name: Setup .NET
@@ -22,6 +22,14 @@ jobs:
       - name: Install .NET MAUI workload
         run: dotnet workload install maui
 
-            # Step 7: Install Squirrel globally
+      # Step 4: Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Step 5: Build the app
+      - name: Build the app
+        run: dotnet build -f net8.0-windows -c Release
+        
+      # Step 7: Install Squirrel globally
       - name: Install Squirrel
         run: npm install -g squirrel
